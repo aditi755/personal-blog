@@ -1,17 +1,17 @@
-import express from "express";
 import dotenv from "dotenv";
+import path from "path";
+import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import mongoose from "mongoose";
-import authRoutes from "./routes/authRoutes";
-import postRoutes from "./routes/postRoutes";
+import connectDB from "./config/db"; 
 
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, ".env.local") });
+
 const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // Your frontend URL
+    origin: "http://localhost:3000",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
@@ -22,15 +22,15 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
-// Routes
+// Import Routes
+import authRoutes from "./routes/authRoutes";
+import postRoutes from "./routes/postRoutes";
+
 app.use("/api/auth", authRoutes);
 app.use("/api/posts", postRoutes);
 
 // Connect to MongoDB
-mongoose
-  .connect("mongodb+srv://awdhesh1700:jRLWYJQu1VSh91B3@cluster0.pjt4j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", { bufferCommands: false })
-  .then(() => console.log("Database connected successfully"))
-  .catch((err) => console.error(err));
+connectDB();
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

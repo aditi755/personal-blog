@@ -23,7 +23,7 @@ const token = req.cookies?.token
   
   try {
     // Decode and verify the token
-    const decoded = jwt.verify(token, "your-secret-key") as UserPayload;
+    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as UserPayload;
     req.user = { id: decoded.id }; // Attach the user payload to the request object
 
     next(); // Proceed to the next middleware
