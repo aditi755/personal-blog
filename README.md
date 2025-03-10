@@ -34,7 +34,7 @@ A full-stack personal blog platform where users can sign up, log in, and post ar
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Frontend**: Next.js 14, TypeScript, React
 - **Backend**: Node.js, Express.js, Typescript
 - **Database**: MongoDB (with Mongoose ORM)
@@ -43,9 +43,9 @@ A full-stack personal blog platform where users can sign up, log in, and post ar
 
 ---
 
-## 📌 Installation & Setup
+## Installation & Setup
 
-### 1️⃣ Clone the Repository
+### Clone the Repository
 ```sh
 git clone https://github.com/yourusername/personal-blog.git
 cd personal-blog
