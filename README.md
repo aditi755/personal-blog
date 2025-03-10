@@ -16,6 +16,12 @@ A full-stack personal blog platform where users can sign up, log in, and post ar
 - **Data Models**:
   - **User**: `id, email, passwordHash`
   - **Post**: `id, title, content, authorId, createdAt`
+- **Backend folder structure**:
+- server.ts → Entry point for the backend, sets up Express and other requirements.
+- routes/ → Contains route handlers for authentication and posts.
+- controllers/ → Houses authentication (authController.ts) and post logic (postController.ts).
+- models/ → Defines Mongoose schemas for User and Post.
+- config/db.ts -> for db connection
 
 ### Frontend (Next.js 14 & TypeScript)
 - **Pages**:
@@ -24,7 +30,9 @@ A full-stack personal blog platform where users can sign up, log in, and post ar
   - `/signup` → User signup page.
   - `/dashboard` → Private route where logged-in users can post articles and view their own posts.
   - `/dashboard/create-post` -> The route that lets the users create a post with title and content.
-  - `/post/[postId]` -> To see the specific posts. 
+  - `/post/[postId]` -> To see the specific posts.
+  - components/ → Contains reusable UI components.
+  - lib/ → Contains auth.ts and post.ts for handling API calls, exported for use in pages.
 - **Optimized Rendering**:
   - Uses **server-side rendering (SSR)** for the homepage.
   - Uses **static generation (SSG)** for blog posts.
