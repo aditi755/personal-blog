@@ -1,9 +1,9 @@
 # Personal Blog Platform
 
 A full-stack personal blog platform where users can sign up, log in, and post articles. Users can also view all posts and filter them by author. The backend is built with **Node.js, Express and Typescript**, while the frontend uses **Next.js 14 with TypeScript**.
+### Demo Video  [Click here to watch the demo](https://www.loom.com/share/10e4798247434f5f985803d59d369fb4?sid=adc3cd09-7510-41de-934d-97d6e1cb0341)
 
 ## Features
-
 ### Backend (Node.js/Express)
 - **Authentication**: Secure JWT-based authentication with hashed passwords using HTTP only cookie.
 - **API Endpoints**:
